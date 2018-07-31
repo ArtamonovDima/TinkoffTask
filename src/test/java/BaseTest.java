@@ -1,7 +1,4 @@
-import PageObjects.BasePage;
-import PageObjects.KommunalniePlatezhi;
-import PageObjects.MainPage;
-import PageObjects.PaymentsPage;
+import PageObjects.*;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -11,6 +8,8 @@ public class BaseTest {
     MainPage mainPage;
     PaymentsPage paymentsPage;
     KommunalniePlatezhi kommunalniePlatezhi;
+    ZhkuMoskva zhkuMoskva;
+    ZhkuMoskvaOplata zhkuMoskvaOplata;
 
     @BeforeClass
     public void init(){
@@ -18,6 +17,8 @@ public class BaseTest {
         mainPage = new MainPage();
         paymentsPage = new PaymentsPage();
         kommunalniePlatezhi = new KommunalniePlatezhi();
+        zhkuMoskva = new ZhkuMoskva();
+        zhkuMoskvaOplata = new ZhkuMoskvaOplata();
     }
 
     @AfterClass

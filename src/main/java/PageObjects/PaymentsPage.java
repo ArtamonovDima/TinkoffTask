@@ -32,7 +32,6 @@ public class PaymentsPage {
 
     public String getFirstElementOfResult(){
         List<WebElement> array = Element.getListOfElements(webElementList);
-        //Element.click(array.get(0));
         return array.get(0).getText();
     }
 

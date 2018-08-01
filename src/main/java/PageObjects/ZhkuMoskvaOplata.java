@@ -7,7 +7,8 @@ public class ZhkuMoskvaOplata {
 
     By codeField = By.xpath("//input[@name = 'provider-payerCode']");
     By periodField = By.xpath("//input[@name = 'provider-period']");
-    By combinationField = By.xpath("//div[@class = 'Input__value_2Kx90']/input");
+    By combinationFieldForClick = By.xpath("//div[@class = 'ui-form__row ui-form__row_combination']");
+    By combinationField = By.xpath("//form[@class = 'ui-form']/div[4]//input");
     By codeFieldErrorMessage = By.xpath(
             "//div[@class = 'ui-form__row ui-form__row_text ui-form__row_default-error-view-visible']/div/div[2]");
     By periodFieldErrorMessage = By.xpath(
@@ -48,5 +49,9 @@ public class ZhkuMoskvaOplata {
 
     public void clickButton(){
         Element.click(button);
+    }
+
+    public void clickComb(){
+        Element.click(combinationFieldForClick);
     }
 }

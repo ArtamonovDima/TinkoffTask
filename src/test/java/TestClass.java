@@ -9,6 +9,7 @@ public class TestClass extends BaseTest{
     public void test1_7steps() {
 
         basePage.getUrl("https://www.tinkoff.ru");
+        basePage.getScreenshot();
         mainPage.clickPayments().clickKommunalniePlatezhi();
 
         if (kommunalniePlatezhi.getRegionName().equals("Москве")) {

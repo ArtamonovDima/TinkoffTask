@@ -12,5 +12,5 @@ public class BasePage {
         Element.close();
     }
 
-
+    public void getScreenshot(){ Element.getScreenshot(); }
 }

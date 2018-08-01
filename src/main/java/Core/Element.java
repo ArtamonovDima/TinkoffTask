@@ -1,17 +1,18 @@
 package Core;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.List;
 
 public class Element {
 
 private static WebDriver driver = WebDriverSingleton.getInstance();
-private static WebDriverWait wait = new WebDriverWait(driver, 30);
+private static WebDriverWait wait = new WebDriverWait(driver, 20);
 
 public static void click(By locator){
     wait.until(ExpectedConditions.elementToBeClickable(locator)).click();
@@ -52,5 +53,13 @@ public static void getUrl(String url){
 
 public static void close(){
     WebDriverSingleton.close();
+}
+
+public static void getScreenshot(){
+    File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+    try{
+        FileUtils.copyFile(scrFile, new File(
+                "target/generated-sources/screenshots/Screenshot.png" + System.currentTimeMillis()));
+    }catch (IOException e){e.printStackTrace();}
 }
 }
